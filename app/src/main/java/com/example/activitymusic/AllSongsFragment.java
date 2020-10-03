@@ -33,7 +33,8 @@ public class AllSongsFragment extends BaseSongListFragment implements LoaderMana
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        return new CursorLoader(getContext(), MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null, null);
+        return new CursorLoader(getContext(), MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null,
+                MediaStore.Audio.Media.IS_MUSIC + " = 1", null, null);
     }
 
     @Override
